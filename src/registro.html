@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/logo_principal.png" type="image/png">
+    <title data-lang="title_registro">Registro - Mochileros por el mundo</title>
+    <link rel="stylesheet" type="text/css" href="styles/estilos.css">
+    <link rel="stylesheet" type="text/css" href="styles/e_registro.css">
+</head>
+
+<body class="body-mochileros">
+
+    <div class="layout-global">
+
+        <aside class="zona-publicidad publicidad-izquierda">
+            <div class="titulo-ad" data-lang="ad_recommend">Te recomendamos</div>
+            <a href="https://www.amazon.es/NORTIV8-Senderismo-Impermeables-Zapatillas-Antideslizante/dp/B0BFPTSSQW/"
+                target="_blank" class="amazon-card">
+                <div class="img-container">
+                    <img src="images/izquierda-arriba.jpg" alt="Botas senderismo">
+                </div>
+                <div class="info-ad">
+                    <p class="titulo-prod" data-lang="prod_boots1">Botas Senderismo Impermeables</p>
+                    <div class="precio-ad">53,54€ <i class="fab fa-amazon"></i></div>
+                    <span class="btn-amazon" data-lang="btn_amazon">Ver en Amazon</span>
+                </div>
+            </a>
+            <a href="https://www.amazon.es/Columbia-Waterproof-Impermeables-Trekking-Senderismo/dp/B0CLW4PW32/"
+                target="_blank" class="amazon-card">
+                <div class="img-container">
+                    <img src="images/izquierda-abajo.jpg" alt="Botas Piel">
+                </div>
+                <div class="info-ad">
+                    <p class="titulo-prod" data-lang="prod_boots2">Botas de Montaña Piel - Pro</p>
+                    <div class="precio-ad">79,95€ <i class="fab fa-amazon"></i></div>
+                    <span class="btn-amazon" data-lang="btn_amazon">Ver en Amazon</span>
+                </div>
+            </a>
+        </aside>
+
+        <div class="contenedor-principal">
+
+            <nav class="navbar">
+                <ul class="menu-header-footer">
+                    <li><a href="index.html" class="logo-nav"><img src="images/logo_principal.png" alt="Mochileros Inicio"></a></li>
+                    <li><a href="packs.html" data-lang="nav_packs">Packs</a></li>
+                    <li><a href="foro.html" data-lang="nav_forum">Foro</a></li>
+                    <li><a href="articulos.html" data-lang="nav_articles">Artículos</a></li>
+                    <li><a href="faq.html" data-lang="nav_faq">Preguntas frecuentes</a></li>
+                    <li><a href="otros_rincones.html" data-lang="nav_corners">Otros rincones</a></li>
+                    <li><a href="nosotros.html" data-lang="nav_about">Nosotros</a></li>
+                </ul>
+                <div class="idioma-login" id="panel-usuario-nav">
+                    <select id="selector-idioma" class="selector-idioma" aria-label="Seleccionar idioma">
+                        <option value="es">Español</option>
+                        <option value="en">English</option>
+                    </select>
+                    <a href="login.html" data-lang="nav_login">Iniciar Sesión</a>
+                </div>
+            </nav>
+
+            <header class="header-registro">
+
+                <h1 data-lang="register_title">Portal de Registro</h1>
+            </header>
+
+            <main class="main-registro">
+                <div class="registro-card">
+
+                    <h2 data-lang="btn_register">Registro:</h2> <form id="form-registro" onsubmit="event.preventDefault(); validarRegistro();" class="formulario-registro">
+
+                        <div class="grupo-input">
+                            <label for="nombre" data-lang="label_name">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Ana" data-lang-placeholder="ph_firstname_ex" required>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label for="apellidos" data-lang="label_surname">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos" placeholder="Ej: López García" data-lang-placeholder="ph_lastname_ex" required>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label for="usuario" data-lang="label_user_login">Nombre de Usuario (Login)</label>
+                            <input type="text" id="usuario" name="usuario" placeholder="Ej: viajero23" data-lang-placeholder="ph_user_ex" required>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label for="pass1" data-lang="label_password">Contraseña</label>
+                            <input type="password" id="pass1" name="pass1" placeholder="Mínimo 8 carácteres, mayúscula, número..." data-lang-placeholder="ph_pass" required>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label for="pass2" data-lang="label_pass_repeat">Repetir contraseña</label>
+                            <input type="password" id="pass2" name="pass2" placeholder="Repite la contraseña" data-lang-placeholder="ph_pass_repeat" required>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label for="email" data-lang="label_email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="nombre@ejemplo.com" data-lang-placeholder="ph_email_ex" required>
+                        </div>
+
+                        <div class="grupo-input grupo-foto">
+                            <label data-lang="label_photo">Añadir foto (Opcional):</label>
+
+                            <div class="custom-file-container">
+                                <label for="foto" class="btn-archivo-custom" data-lang="btn_choose_file">Seleccionar archivo</label>
+                                <span id="texto-nombre-archivo" class="texto-archivo" data-lang="text_no_file">Ningún archivo seleccionado</span>
+
+                                <input type="file" id="foto" name="foto" class="input-file-oculto" accept="image/*" onchange="actualizarNombreArchivo()">
+                            </div>
+                        </div>
+
+                        <div class="grupo-checkbox">
+                            <input type="checkbox" id="condiciones" name="condiciones" required>
+                            <label for="condiciones" data-lang="label_terms">Acepto términos y condiciones</label>
+                        </div>
+
+                        <button type="submit" class="btn-registrar-final" data-lang="btn_register">Registrar</button>
+
+                    </form>
+                </div>
+            </main>
+
+            <footer>
+                <div class="footer-top">
+                    <div class="col-footer">
+                        <h4 data-lang="footer_title">Mochileros por el mundo</h4>
+                        <div class="bloque-siguenos">
+                            <h5 data-lang="follow_us">SÍGUENOS</h5>
+                            <div class="iconos-sociales">
+                                <a href="https://www.instagram.com/" target="_blank" title="Instagram"><img
+                                        src="images/instagram_r.png" alt="IG"></a>
+                                <a href="https://www.facebook.com/" target="_blank" title="Facebook"><img
+                                        src="images/facebook_r.png" alt="FB"></a>
+                                <a href="https://www.tiktok.com/" target="_blank" title="TikTok"><img
+                                        src="images/tiktok_r.png" alt="TK"></a>
+                                <a href="https://www.youtube.com/" target="_blank" title="YouTube"><img
+                                        src="images/youtube_r.png" alt="YT"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-footer">
+                        <h4 data-lang="legal">Legal</h4>
+                        <p data-lang="terms">Términos y condiciones</p>
+                        <p data-lang="info">Información</p>
+                        <p data-lang="page">Política de privacidad</p>
+                    </div>
+                    <div class="col-footer">
+                        <h4 data-lang="help">Ayuda</h4>
+                        <p data-lang="faq_short">Preguntas frecuentes</p>
+                        <p data-lang="problems">Problemas</p>
+                        <p data-lang="incidents">Incidencias web</p>
+                    </div>
+                    <div class="col-footer">
+                        <h4 data-lang="contact">Contacto</h4>
+                        <p data-lang="doubts">Dudas</p>
+                        <p data-lang="phone">Número telefónico</p>
+                    </div>
+                </div>
+
+                <div class="footer-bottom-pago">
+                    <h5 data-lang="secure_pay">PAGO SEGURO</h5>
+                    <div class="iconos-pago">
+                        <div class="tarjeta-icono"><img src="images/visa.png" alt="Visa"></div>
+                        <div class="tarjeta-icono"><img src="images/matercard.png" alt="Mastercard"></div>
+                        <div class="tarjeta-icono"><img src="images/paypal.png" alt="Paypal"></div>
+                    </div>
+                </div>
+
+            </footer>
+
+        </div>
+
+        <aside class="zona-publicidad publicidad-derecha">
+            <div class="titulo-ad" data-lang="ad_top">Top Ventas</div>
+            <a href="#" class="amazon-card">
+                <div class="img-container"><img src="images/derecha-arriba.jpg" alt="Mochila"></div>
+                <div class="info-ad">
+                    <p class="titulo-prod" data-lang="prod_backpack">Mochila Táctica</p>
+                    <div class="precio-ad">129,95€</div>
+                    <span class="btn-amazon" data-lang="btn_amazon">Ver en Amazon</span>
+                </div>
+            </a>
+            <a href="https://www.amazon.es/Night-Cat-Tienda-Persona-Ultraligero/dp/B0DYD4D2XB" target="_blank"
+                class="amazon-card">
+                <div class="img-container"><img src="images/derecha-abajo.jpg" alt="Tienda Campaña"></div>
+                <div class="info-ad">
+                    <p class="titulo-prod" data-lang="prod_tent">Tienda Campaña Ultraligera</p>
+                    <div class="precio-ad">179,99€ <i class="fab fa-amazon"></i></div>
+                    <span class="btn-amazon" data-lang="btn_amazon">Ver en Amazon</span>
+                </div>
+            </a>
+        </aside>
+
+    </div>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/registro.js"></script>
+</body>
+
+</html>

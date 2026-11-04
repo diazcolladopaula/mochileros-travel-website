@@ -1,0 +1,125 @@
+
+
+.header-nosotros {
+
+    background: linear-gradient(135deg, #0077B6 0%, #023E8A 100%);
+    padding: 40px 50px;
+    text-align: center;
+    color: white;
+}
+
+.header-nosotros h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.main-nosotros {
+    background-color: #E1F5FE;
+    background-image: radial-gradient(#0077B6 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.contenido-nosotros {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.imagen-equipo {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 4px solid white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 2;
+}
+
+.imagen-equipo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    transition: transform 0.5s ease;
+}
+
+.imagen-equipo:hover img {
+    transform: scale(1.05);
+}
+
+.caja-texto-mision {
+    background: linear-gradient(180deg, #003049 0%, #023E8A 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 48, 73, 0.3);
+    border: 2px solid #FFB703;
+    position: relative;
+    margin-top: -20px;
+    z-index: 1;
+}
+
+.caja-texto-mision p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.caja-texto-mision p:last-child {
+    margin-bottom: 0;
+}
+
+.frase-cierre {
+    font-weight: 700;
+    text-align: center !important;
+    color: #FFB703;
+    font-size: 1.2rem !important;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+.navbar .active {
+    color: #0077B6 !important;
+    font-weight: 700;
+    position: relative;
+}
+
+.navbar .active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #FFB703;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .main-nosotros {
+        padding: 20px;
+    }
+
+    .imagen-equipo {
+        height: 250px;
+    }
+
+    .caja-texto-mision {
+        padding: 25px;
+        margin-top: 0;
+    }
+
+    .header-nosotros h1 {
+        font-size: 2rem;
+    }
+}
