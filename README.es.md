@@ -2,6 +2,8 @@
 
 [🇬🇧 English](README.md) · 🇪🇸 Español
 
+   **Demo en vivo:** https://diazcolladopaula.github.io/mochileros-travel-website/
+
 Sitio web estático para una agencia de viajes ficticia con blog y comunidad integrados. Está hecho con HTML5, CSS3 y JavaScript puro (sin frameworks ni backend) y se desarrolló como proyecto en grupo (cuatro estudiantes) para la asignatura de Interfaces de Usuario de la universidad.
 
 ![Página de inicio](docs/screenshots/home.png)
