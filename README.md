@@ -2,6 +2,8 @@
 
 🇬🇧 English · [🇪🇸 Español](README.es.md)
 
+   **Live demo:** https://diazcolladopaula.github.io/mochileros-travel-website/
+   
 A static website for a fictional travel agency with a built-in community blog. It is built with plain HTML5, CSS3 and vanilla JavaScript (no frameworks, no backend) and was developed as a group project (four students) for a User Interfaces course at university.
 
 ![Home page](docs/screenshots/home.png)
